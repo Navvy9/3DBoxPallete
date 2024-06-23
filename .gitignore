@@ -2,14 +2,14 @@
 
 # dependencies
 /threejs-box/node_modules
-/threejs-box/.pnp
+.pnp
 .pnp.js
 
 # testing
-/threejs-box/coverage
+/coverage
 
 # production
-/threejs-box/build
+/build
 
 # misc
 .DS_Store
