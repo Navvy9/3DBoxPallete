@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoxApi.Migrations
 {
     [DbContext(typeof(BoxContext))]
-    [Migration("20240622194931_InitialCreate")]
+    [Migration("20240624140300_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,17 +25,21 @@ namespace BoxApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("BoxId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<float>("Height")
+                    b.Property<double>("Height")
                         .HasColumnType("REAL");
 
-                    b.Property<float>("Length")
+                    b.Property<double>("Length")
                         .HasColumnType("REAL");
 
-                    b.Property<float>("Width")
+                    b.Property<double>("Width")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");

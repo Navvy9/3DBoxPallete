@@ -1,40 +1,56 @@
-using Microsoft.AspNetCore.Mvc;
-using BoxApi.Data;
-using BoxApi.Models;
+// Controllers/BoxController.cs
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using BoxApi.Data;
+using BoxApi.Models;
 
 namespace BoxApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BoxesController : ControllerBase
+    public class BoxController : ControllerBase
     {
         private readonly BoxContext _context;
 
-        public BoxesController(BoxContext context)
+        public BoxController(BoxContext context)
         {
             _context = context;
         }
 
-        // GET: api/boxes
+        // GET: api/box
         [HttpGet]
         public ActionResult<IEnumerable<Box>> GetBoxes()
         {
             return _context.Boxes.ToList();
         }
 
-        // POST: api/boxes
+        // GET: api/box/5
+        [HttpGet("{id}")]
+        public ActionResult<Box> GetBox(int id)
+        {
+            var box = _context.Boxes.Find(id);
+
+            if (box == null)
+            {
+                return NotFound();
+            }
+
+            return box;
+        }
+
+        // POST: api/box
         [HttpPost]
         public ActionResult<Box> PostBox(Box box)
         {
             _context.Boxes.Add(box);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetBoxes), new { id = box.Id }, box);
+            return CreatedAtAction(nameof(GetBox), new { id = box.Id }, box);
         }
 
-        // DELETE: api/boxes/{id}
+        // DELETE: api/box/5
         [HttpDelete("{id}")]
         public IActionResult DeleteBox(int id)
         {

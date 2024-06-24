@@ -1,0 +1,38 @@
+/* src/components/BoxList.css */
+
+.box-list {
+    margin-top: 20px;
+  }
+  
+  .box-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .box-list th,
+  .box-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .box-list th {
+    background-color: #f4f4f4;
+  }
+  
+  .box-list button {
+    padding: 5px 10px;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .box-list button:hover {
+    background-color: #c82333;
+  }
+  

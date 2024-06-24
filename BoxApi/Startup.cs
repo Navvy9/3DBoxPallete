@@ -1,7 +1,10 @@
-using BoxApi.Data;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using BoxApi.Data;
 
 namespace BoxApi
 {
@@ -26,9 +29,9 @@ namespace BoxApi
                 options.AddPolicy("AllowReactApp",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000")  // Allow requests from this origin
-                               .AllowAnyMethod()                      // Allow all HTTP methods
-                               .AllowAnyHeader();                     // Allow all headers
+                        builder.WithOrigins("http://localhost:3000")
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
                     });
             });
         }
@@ -42,12 +45,17 @@ namespace BoxApi
 
             app.UseRouting();
 
-            // Apply CORS policy before endpoint routing
             app.UseCors("AllowReactApp");
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            // Configure Kestrel server to use port 5169
+            app.Run(async (context) =>
+            {
+                context.Response.Redirect($"http://localhost:5169{context.Request.Path}");
             });
         }
     }

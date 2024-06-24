@@ -2978,7 +2978,7 @@
     "net8.0": [
       "Microsoft.AspNetCore.OpenApi >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.6",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.6",
+      "Microsoft.EntityFrameworkCore.SQLite >= 8.0.6",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -3034,7 +3034,7 @@
             "target": "Package",
             "version": "[8.0.6, )"
           },
-          "Microsoft.EntityFrameworkCore.Sqlite": {
+          "Microsoft.EntityFrameworkCore.SQLite": {
             "target": "Package",
             "version": "[8.0.6, )"
           },

@@ -112,6 +112,7 @@ D:\3D_project\BoxApi\obj\Debug\net8.0\BoxApi.AssemblyInfo.cs
 D:\3D_project\BoxApi\obj\Debug\net8.0\BoxApi.csproj.CoreCompileInputs.cache
 D:\3D_project\BoxApi\obj\Debug\net8.0\BoxApi.MvcApplicationPartsAssemblyInfo.cs
 D:\3D_project\BoxApi\obj\Debug\net8.0\BoxApi.MvcApplicationPartsAssemblyInfo.cache
+D:\3D_project\BoxApi\obj\Debug\net8.0\BoxApi.sourcelink.json
 D:\3D_project\BoxApi\obj\Debug\net8.0\staticwebassets.build.json
 D:\3D_project\BoxApi\obj\Debug\net8.0\staticwebassets.development.json
 D:\3D_project\BoxApi\obj\Debug\net8.0\staticwebassets\msbuild.BoxApi.Microsoft.AspNetCore.StaticWebAssets.props

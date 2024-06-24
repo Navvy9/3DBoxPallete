@@ -16,9 +16,10 @@ namespace BoxApi.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Length = table.Column<float>(type: "REAL", nullable: false),
-                    Width = table.Column<float>(type: "REAL", nullable: false),
-                    Height = table.Column<float>(type: "REAL", nullable: false),
+                    BoxId = table.Column<string>(type: "TEXT", nullable: false),
+                    Width = table.Column<double>(type: "REAL", nullable: false),
+                    Length = table.Column<double>(type: "REAL", nullable: false),
+                    Height = table.Column<double>(type: "REAL", nullable: false),
                     Color = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
